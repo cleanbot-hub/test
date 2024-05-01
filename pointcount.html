@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포인트현황</title>
+    <style>
+ *{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+    /* 모든 요소의 패딩, 마진, 상자 크기 설정 */
+}
+
+#wrap{
+    width: 1920px;
+    /* 화면 너비 1920px로 설정 */
+}
+
+#header{
+    width: 1920px;
+    height: 150px;
+    background: black;
+    display: flex;
+    /* 헤더 스타일링 */
+}
+
+#logo img{
+    width: 200px;
+    height: 150px;
+    /* 로고 이미지 스타일링 */
+}
+
+/* Bar Graph Horizontal */
+.bar-graph .year {
+  -webkit-animation: fade-in-text 2.2s 0.1s forwards;
+  -moz-animation: fade-in-text 2.2s 0.1s forwards;
+  animation: fade-in-text 2.2s 0.1s forwards;
+  opacity: 0;
+  /* 바 그래프 연도 스타일링 */
+}
+
+.bar-graph-horizontal {
+  max-width: 380px;
+  /* 수평 바 그래프 최대 너비 설정 */
+}
+
+.bar-graph-horizontal > div {
+  float: left;
+  margin-bottom: 8px;
+  width: 100%;
+}
+
+.bar-graph-horizontal .year {
+  float: left;
+  margin-top: 18px;
+  width: 80px;
+  /* 수평 바 그래프 연도 스타일링 */
+}
+
+.bar-graph-horizontal .bar {
+  border-radius: 3px;
+  height: 55px;
+  float: left;
+  overflow: hidden;
+  position: relative;
+  width: 0;
+  /* 수평 바 그래프 바 스타일링 */
+}
+
+.bar-graph-one .bar::after {
+  -webkit-animation: fade-in-text 2.2s 0.1s forwards;
+  -moz-animation: fade-in-text 2.2s 0.1s forwards;
+  animation: fade-in-text 2.2s 0.1s forwards;
+  color: #fff;
+  content: attr(data-percentage);
+  font-weight: 700;
+  position: absolute;
+  right: 16px;
+  top: 17px;
+  /* 수평 바 그래프 바 텍스트 스타일링 */
+}
+
+.bar-graph-one .bar-one .bar {
+  background-color: #64b2d1;
+  -webkit-animation: show-bar-one 1.2s 0.1s forwards;
+  -moz-animation: show-bar-one 1.2s 0.1s forwards;
+  animation: show-bar-one 1.2s 0.1s forwards;
+  /* 수평 바 그래프 바1 스타일링 */
+}
+
+.bar-graph-one .bar-two .bar {
+  background-color: #5292ac;
+  -webkit-animation: show-bar-two 1.2s 0.2s forwards;
+  -moz-animation: show-bar-two 1.2s 0.2s forwards;
+  animation: show-bar-two 1.2s 0.2s forwards;
+  /* 수평 바 그래프 바2 스타일링 */
+}
+
+.bar-graph-one .bar-three .bar {
+  background-color: #407286;
+  -webkit-animation: show-bar-three 1.2s 0.3s forwards;
+  -moz-animation: show-bar-three 1.2s 0.3s forwards;
+  animation: show-bar-three 1.2s 0.3s forwards;
+  /* 수평 바 그래프 바3 스타일링 */
+}
+
+.bar-graph-one .bar-four .bar {
+  background-color: #2e515f;
+  -webkit-animation: show-bar-four 1.2s 0.4s forwards;
+  -moz-animation: show-bar-four 1.2s 0.4s forwards;
+  animation: show-bar-four 1.2s 0.4s forwards;
+  /* 수평 바 그래프 바4 스타일링 */
+}
+
+
+/* Bar Graph Horizontal Animations */
+@keyframes show-bar-one {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 69.6%;
+  }
+}
+
+@keyframes show-bar-two {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 71%;
+  }
+}
+
+@keyframes show-bar-three {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 74.7%;
+  }
+}
+
+@keyframes show-bar-four {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 76.8%;
+  }
+}
+
+@keyframes fade-in-text {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#graph{
+    width: 600px;
+    height: 600px;
+    margin: 0 auto;
+    padding: 100px;
+    /* 그래프 영역 스타일링 */
+}
+
+h1{
+    text-align: center;
+    padding: 40px;
+    /* 제목 스타일링 */
+}
+
+
+    </style>
+</head>
+<body>
+
+
+<!-- 헤더 전체적인 wrap-->
+    <div id="wrap">
+        <header id="header">
+        <!-- 로고-->
+        <div id="logo">
+          <a href="index.html">
+            <img src="./image/logo.png">
+          </a>
+        </div>
+      </header>    
+      <div id="graph">
+        
+        <h1>포인트 적립현황</h1>
+        
+        
+        <section class="bar-graph bar-graph-horizontal bar-graph-one">
+          <div class="bar-one">
+            <span class="year">CU</span>
+            <div class="bar" data-percentage="+2,000P"></div>
+          </div>
+          <div class="bar-two">
+            <span class="year">쿠팡</span>
+            <div class="bar" data-percentage="+6,000P"></div>
+          </div>
+          <div class="bar-three">
+            <span class="year">알라딘</span>
+            <div class="bar" data-percentage="+8,000P"></div>
+          </div>
+          <div class="bar-four">
+            <span class="year">벅스</span>
+            <div class="bar" data-percentage="+10,000P"></div>
+          </div>
+        </section>
+      </div>
+      <style>
+        table tr td{
+          border-bottom: 1px dashed black;
+          width:400px;
+          height:100px;
+        }
+        #list{
+          text-align: center;
+          font-size: 25px;
+        }
+        #list td:nth-child(3){
+          color:red;
+          font-weight: 900;
+          
+              }
+              #list td:nth-child(4){
+                color:#2e515f;
+                font-weight: 900;
+              }
+              #pt_list #list{
+                margin:20px 0 0 150px;
+              }
+
+            </style>
+            <div id="pt_list">
+              <h1>포인트 사용내역</h1>
+                <div id="list">
+                  <table>
+                    <tr>
+                      <td>2023.07.19</td>
+                      <td>CU편의점 대전선화점</td>
+                      <td>4000p 사용</td>
+                      <td>보유포인트 2,000p</td>
+                    </tr>
+                    <tr>
+                      <td>2023.07.13</td>
+                      <td>쿠팡</td>
+                      <td>2000p 사용</td>
+                      <td>보유포인트 6,000p</td>
+                    </tr>
+                    <tr>
+                      <td>2023.06.19</td>
+                      <td>알라딘</td>
+                      <td>2000p 사용</td>
+                      <td>보유포인트 8,000p</td>
+                    </tr>
+                    <tr>
+                      <td>2023.04.19</td>
+                      <td>벅스</td>
+                      <td>20p 사용</td>
+                      <td>보유포인트 10,000p</td>
+                    </tr>
+                  </table>
+                </div>
+            </div>
+</body>
+</html>
