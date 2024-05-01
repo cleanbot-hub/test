@@ -106,3 +106,47 @@
 .chat-msg.self > .msg-avatar img {
     max-width: 100%;
 }
+
+/* Media Queries */
+
+@media only screen and (max-width: 768px) {
+    /* Adjustments for tablets and smaller devices */
+    .content_body {
+        padding: 20px;
+    }
+    .content_body h1 {
+        font-size: 24px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    /* Adjustments for mobile devices */
+    .main_menu {
+        flex-direction: column;
+        align-items: center;
+    }
+    #header {
+        height: 120px;
+    }
+    #logo img {
+        width: 150px;
+        height: auto;
+    }
+    .userinfor {
+        flex-direction: column;
+    }
+    .side,
+    .login {
+        max-width: 100%;
+    }
+    .chat-box {
+        width: 100%;
+    }
+    .chat-logs,
+    .chat-msg,
+    .cm-msg-text,
+    .chat-msg.user > .msg-avatar img,
+    .chat-msg.self > .msg-avatar img {
+        max-width: 90%;
+    }
+}
